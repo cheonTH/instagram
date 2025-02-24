@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- HTML 리스트(list) 태그 
+     1. 순서가 없는 리스트
+     2. 순서가 있는 리스트-->
+
+     <h3>순서가 없는 리스트</h3>
+     <ul> <!-- unordered list -->
+        <li>물 넣기</li>
+        <li>스프 넣기</li>
+        <li>면 넣기</li>
+        <li>끓이기</li>
+     </ul>
+     <hr>
+     
+     <h3>리스트 구분값 바꾸기</h3>
+     <ul style="list-style-type: square;"> <!-- style="list-style-type: ~~;" -->
+        <li>물 넣기</li>
+        <li>스프 넣기</li>
+        <li>면 넣기</li>
+        <li>끓이기</li>
+     </ul>
+
+     <ul style="list-style-type: none;"> <!-- style="list-style-type: ~~;" -->
+        <li>물 넣기</li>
+        <li>스프 넣기</li>
+        <li>면 넣기</li>
+        <li>끓이기</li>
+     </ul>
+
+     <ul style="list-style-type: circle;"> <!-- style="list-style-type: ~~;" -->
+        <li>물 넣기</li>
+        <li>스프 넣기</li>
+        <li>면 넣기</li>
+        <li>끓이기</li>
+     </ul>
+     <hr>
+     
+     <h3>리스트 안에 리스트</h3>
+     <ul> 
+        <li>개인 뱅킹
+            <ul>
+                <li>조회</li>
+                <li>이체</li>
+                <li>신규/해지</li>
+                <li>공과금/법원</li>
+            </ul>
+        </li>
+        <li>스프 넣기</li>
+        <li>면 넣기</li>
+        <li>끓이기</li>
+     </ul>
+     <hr>
+
+     <h3>순서가 있는 리스트</h3>
+     <ol start="3"> <!-- ordered list / start는 시작부분 설정 --> 
+        <li>물 넣기
+            <ol type="1"> <!-- 기본 값-->
+                <li>물을 500ml를 넣는다</li>
+            </ol>
+        </li>
+        <li>스프 넣기
+            <ol type="A">
+                <li>스프 넣기</li>
+            </ol>
+        </li>
+        <li>면 넣기
+            <ol type="I">
+                <li>물 끓기</li>
+                <li>물 끓은 후 면 넣기</li>
+            </ol>
+        </li>
+        <li>끓이기
+        </li>
+     </ul>
+     <hr>
+</body>
+</html>
