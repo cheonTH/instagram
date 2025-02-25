@@ -9,12 +9,18 @@
         h2.prec{color: aqua;}
         h2.prec.prec2{color: black;}
         span{color: red;}
+        span.gray{color: gray;}
+        #pp{color: blue;}
+
+        *{color: beige;} /*모든 요소에 적용*/
+        /* 스타일 우선순위
+        인라인 -> 아이디 -> 클래스 -> 태그 -> 전체선택자(*) */
     </style>
 </head>
 <body>
-    <h2 class="prec">클래스 <span>연습</span>중</h2>
+    <h2 class="prec" id="pp">클래스 <span>연습</span>중</h2>
     <h1>클래스 연습중이라고!</h1>
-    <h2 class="prec">클래스 <span>연습</span>중2</h2>
-    <h2 class="prec prec2">클래스 <span style="color: gray;">연습</span>중3</h2>
+    <h2 class="prec" id="ppp">클래스 <span>연습</span>중2</h2>
+    <h2 class="prec prec2">클래스 <span class="gray">연습</span>중3</h2>
 </body>
 </html>
