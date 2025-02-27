@@ -1,0 +1,122 @@
+<!-- 주석(comment) : 브라우저에서 출력이 되지 않는 문장
+ 소스코드에 대한 설명을 할 때 사용 -->
+<!DOCTYPE html> <!-- HTML5 문서임을 선언, 대소문자 구분없이 정의가능 -->
+<html lang="en"> <!-- 루트 요소 -->
+    <head> <!-- HTML의 meta정보를 포함한다.  -->
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>제목입니다.</title> <!-- HTML 페이지의 제목, 브라우저 상단의 웹페이지 탭에 제목으로 노출  -->
+        <!-- rel: relationship: 연결하려는 파일과의 관계 -->
+        <link rel="stylesheet" href="style.css">
+        <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" rel="stylesheet"/>
+    </head>
+    <body><!-- HTML문서에서 실질적으로 보이는 영역을 정의하는 구간 이미지, 글, 링크, 테이블, 동영상 등등 -->
+        <!-- 코드 작성시 엔터를 눌러 줄바꿈을 시도했음에도 불구하고 실행화면에는 한줄로 연결된 채 나온다. -->
+         <div id="top">
+            <img src="img/instagramlogo.png" width="150px">
+            <input value="검색">
+            <i class="fa-solid fa-house"></i>
+            <i class="fa-solid fa-paper-plane"></i>
+            <i class="fa-solid fa-compass"></i>
+            <i class="fa-solid fa-heart"></i>
+        </div>
+        <div id="profile"> 
+            <div id="profile_pic">
+                <img src="img/profile.jpg" class="circle_pic">
+            </div>
+            <div id="profile_info">
+                <div id="id">half_bottle <i class="fa-solid fa-gear"></i></div>
+                <!-- 인스타그램과 유사하게 버튼 디자인을 수정하려면 다음과 같은 항목들을 수정해야함
+                 1. height
+                 2. width
+                 3. font-size
+                 4. background
+                 5. border
+                 6. radius -->
+                <button>프로필 편집</button>
+            </div>
+        </div>
+        <div>
+            <p>
+                <strong>
+                    반병현(Bynghyun Ban)<br>
+                </strong>
+                작가<br>
+            </p>
+            <p> 
+                <a href="https://needleworm.github.io">needleworm.github.io</a>
+            </p>
+        </div>
+        <div id="highlight_area">
+            <div class="highlight">
+                <div class="highlight_pic">
+                    <img src="img/1.jpg" class="circle_pic">
+                </div>
+                <div class="highlight_text">
+                    😘
+                </div>
+            </div>
+            <div class="highlight">
+                <div class="highlight_pic">
+                    <img src="img/2.jpg" class="circle_pic">
+                </div>
+                <div class="highlight_text">
+                    😘
+                </div>
+            </div>
+        </div>
+        <div id="stat_bar">
+            <div class="stat">
+                게시물<br>
+                133
+            </div>
+            <div class="stat">
+                팔로워<br>
+                408
+            </div>
+            <div class="stat">
+                팔로우<br>
+                189
+            </div>
+        </div>
+
+        <!-- 아이콘이 들어갈 자리 -->
+        <div id="sub_icons">
+            <div class="selected">
+                <i class="fa-solid fa-border-all"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-film"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-circle-play"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-bookmark"></i>
+            </div>
+            <div>
+                <i class="fa-solid fa-tag"></i>
+            </div>
+        </div>
+
+        <div class="thumbnail_grid">
+            <!-- 부모 너비의 32%값이 지정이된다.
+             퍼센트로 지정된 값은 화면 크기에 따라 유동적으로 바뀐다.
+             창 크기의 변화에 맞춰 그때그때 화면의 정보나 크기가 함께
+             바뀌는 웹 페이지를 반응형 웹이라고 한다. -->
+            <img src="img/1.jpg" class="thumbnail">
+            <img src="img/2.jpg" class="thumbnail">
+            <img src="img/3.jpg" class="thumbnail">
+        </div>
+        <div class="thumbnail_grid">
+            <img src="img/4.jpg" class="thumbnail">
+            <img src="img/5.jpg" class="thumbnail">
+            <img src="img/6.jpg" class="thumbnail">
+        </div>
+        <div class="thumbnail_grid">
+            <img src="img/7.jpg" class="thumbnail">
+            <img src="img/8.jpg" class="thumbnail">
+            <img src="img/9.jpg" class="thumbnail">
+        </div>
+    </body>
+</html>

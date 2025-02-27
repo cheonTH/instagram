@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            /* 전체 페이지 설정: 중앙 정렬 및 배경색 */
+            body{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, sans-serif;
+                background: #f2f2f2;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+            }
+
+            /* 컨테이너 박스 스타일 */
+            .signup-container{
+                background: #fff;
+                padding: 40px;
+                border-radius: 35px;
+                width: 350px;
+            }
+
+            /* h2 스타일 */
+            .signup-container h2{
+                text-align: center;
+                margin-bottom: 20px;
+            }
+
+            /* form 스타일 */
+            .signup-container form{
+                display:flex; 
+                flex-direction: column;
+            }
+            
+            /* ID */
+            .signup_id-container{
+                display:flex;
+                align-items: flex-start;
+                gap: 10px; /* 요소간의 간격 */
+            }
+            .signup_id-container input{
+                flex: 1;
+            }
+            .signup_id-container button{
+                padding: 8px 15px;
+                background: #3f29ef;
+                color: white;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            /* label */
+            .signup-container label{
+                margin-bottom: 5px;
+                font-weight: bold;
+            }
+
+            /* input */
+            .signup-container input[type = "text"],
+            .signup-container input[type = "password"],
+            .signup-container input[type = "email"]{
+                padding: 10px;
+                margin-bottom: 15px;
+                border: 1px solid #ccc;
+                border-radius: 15px;
+                font-size: 14px;
+                box-sizing: border-box; 
+                /* box-sizing CSS에서 요소의 크기를 계산하는 방식을 변경하는 속성
+                content-box(기본값)
+                -요소의 너비와 높이는 오직 내용 영역만을 의미한다
+                -padding, margin, border는 요소의 총 크기에 추가된다
+                border-box
+                -요소의 너비와 높이는 padding과 border를 포함한 전체 영역
+                -지정한 너비 내에서 padding과 border가 계산되므로 내용 영역은 자동으로 줄어듬*/
+                
+            }
+
+            /* input 포커스: input을 클릭했을때 효과 */
+            .signup-container input:focus{
+                outline: none; /*테두리를 없앰 */
+                border-color: #3f29ef;
+            }
+
+            .signup_email-container span{
+                font-size: 16px;
+                position: relative;
+            }
+
+            .join_btn{
+                display: flex;
+                flex-direction: column;
+                margin-top: 10px;
+                padding: 10px;
+                font-size: 14px;
+            }
+            .join_btn button{
+                padding: 10px;
+                background: #3f29ef;
+                color: white;
+                border: none;
+                border-radius: 15px;
+                cursor: pointer;
+            }
+
+            .cancel{
+                margin-top: 20px;
+                margin-left: 80px;
+                margin-right: 80px;
+            }
+            .signup-container button:hover{
+                background: #2e1cb3;
+            }
+            
+            .select{
+                border: 1px solid #ccc;
+                padding: 10px;
+                border-radius: 4px;
+                padding-right: 35px;
+                border-radius: 15px;
+            }
+
+            .signup-container .login-link {
+                margin-top: 10px;
+                text-align: center;
+                font-size: 14px;
+            }
+
+            .signup-container .login-link a{
+                color: #3f29ef;
+                text-decoration: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="signup-container">
+            <h2>로그인</h2>
+            <form action="#" method="post">
+                <label for="username">이름</label>
+                <input type="text" id="username" name="username" placeholder="이름 입력" > 
+
+                <label for="userid">아이디</label>
+                <div class="signup_id-container">
+                    <input type="text" id="userid" name="userid" placeholder="아이디 입력" > 
+                    <button>중복체크</button>
+                </div>
+
+
+                <label for="password">비밀번호</label>
+                <input type="password" id="password" name="password" placeholder="비밀번호 입력" >
+
+                <label for="password">비밀번호 확인</label>
+                <input type="password" id="password_check" name="password_check" placeholder="비밀번호 확인" >
+
+                <label for="email">이메일</label>
+
+                <div class="signup_email-container">
+                    <input type="email" id="email" name="email" placeholder="이메일" > 
+                    <span> @ </span>
+                    <select class="select">
+                        <option selected>---</option> 
+                        <option>naver.com</option>
+                        <option>gmail.com</option>
+                        <option>nate.com</option>
+                    </select>
+                </div>
+
+                <div class="join_btn">
+                    <button type="submit" id="join">회원가입</button>
+                    <!-- <button class="cancel"> 취소 </button> --><!-- 취소 버튼 -->
+                </div>
+
+                <div class="login-link">
+                    이미 계정이 있으신가요? <a href="login.html">로그인</a>
+                </div>
+            </form>
+
+
+
+
+
+            <div>
+                <form action="#" method="dialog"></form>
+            </div>
+        </div>
+    </body>
+</html>
