@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+
+        <style>
+            @media(max-width: 600px){  /* 너비가 최대 600px일 때*/
+                p{background-color: pink;}
+                img{display: none}
+            }
+            
+            @media(min-width: 600px){ /* 너비가 600px이 넘으면*/
+                p{background-color: skyblue;}
+
+                img{display: block;}
+            }
+
+            
+        </style>
+    </head>
+    <body>
+        <p>
+            화면에 어떻게 표시되나요?
+        </p>
+        <p>
+            <img src="img/profile.jpg"/>
+        </p>
+    </body>
+</html>
