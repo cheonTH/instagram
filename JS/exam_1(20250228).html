@@ -20,7 +20,7 @@
             document.write("<hr>");
 
             //삼항 연산자
-            box = (ball % count) == 0 ? ball / count : ball / count + 1;
+            box = (ball % count) == 0 ? ball / count : parseInt(ball / count) + 1;
             document.write('박스의 개수: ', box, '<hr>');
 
             //사각형의 면적과 둘레 계산
@@ -52,7 +52,7 @@
             let avg = (sub1 + sub2 + sub3) / 3;
 
             document.write("총합: ", total, "<br>");
-            document.write("평균: ", avg);
+            document.write("평균: ", avg.toFixed(1));
 
 
             document.write("<hr>");
@@ -65,7 +65,7 @@
 
             let day_sec = hour * min * sec;
 
-            document.write("하루의 총 시간을 초로 바꾼 값 :", day_sec + "초" , "<hr>");
+            document.write("하루의 총 시간을 초로 바꾼 값: ", day_sec + "초" , "<hr>");
 
 
             //섭씨 온도를 화씨온도로 변환하기

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //su1, su2변수에 임의의 값으로 초기화한다
+        //산술 연산자 기호를 담아줄 변수를 하나 만든다
+        //switch문을 이용하여 정수의 연산을 수행하는 코드 만들기
+        //Ex. 실행결과 -> 10 * 7 = 70
+
+        let su1 = 10;
+        let su2 = 7;
+        let oper = '';
+
+        
+
+        switch(oper){
+            case '+':
+                document.write(`${su1} ${oper} ${su2} = ${su1 + su2}  <hr>`);
+                break;
+            case '-':
+                document.write(`${su1} ${oper} ${su2} = ${su1 - su2}  <hr>`);
+                break;
+            case '*':
+                document.write(`${su1} ${oper} ${su2} = ${su1 * su2}  <hr>`);
+                break;
+            case '/':
+                document.write(`${su1} ${oper} ${su2} = ${(su1 / su2).toFixed(1)}  <hr>`);
+                break;
+            case '%':
+                document.write(`${su1} ${oper} ${su2} = ${su1 % su2}  <hr>`);
+                break;
+            default:
+                document.write(`+, -, *, /, %로만 입력가능합니다.<hr>`);
+                break;
+        }
+
+        //1~10사이의 값을 변수에 담는다
+        //홀수인지 짝수인지 switch를 이용하여 판별
+
+        let num = 11;
+        let odd = num % 2
+
+        if(num > 10 || num < 1){
+                document.write(`1~10사이의 숫자를 입력해 주세요. <hr>`);
+        }else{
+            switch(odd){
+            case 1:
+                document.write(`홀수 입니다. <hr>`);
+                break;
+            case 0:
+                document.write(`짝수 입니다. <hr>`);
+                break;
+            }
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //switch문
+        //if문과 비슷하지만 if문은 조건식이 들어가야함
+        //swithc문은 비교값이 들어감
+
+        // switch(비교값){
+        //     case 조건값1:
+        //         비교값과 조건값1이 일치할 때 실행할 명령;
+        //         break;
+        // }
+
+        n = 1;
+        switch(n){
+            case 1:
+            document.write(`1. 게임하기 <hr>`);
+            break;
+            case 2:
+            document.write(`2. 환경설정 <hr>`);
+            break;
+            case 3:
+            document.write(`3. 게임종료 <hr>`);
+            break;
+        }
+        
+        //break가 없으면 만나는 모든 명령을 실행하면서 내려감.
+        switch(n){
+            case 1:
+            document.write(`n은 1 입니다 <hr>`);
+            console.log(`n은 1 입니다`)
+            case 2:
+            document.write(`n은 2 입니다 <hr>`);
+            console.log(`n은 1=2 입니다`)
+            case 3:
+            document.write(`n은 3 입니다 <hr>`);
+            console.log(`n은 3 입니다`)
+        }
+
+        //모든케이스가 하나의 명령을 공유하는 형태
+        switch(2){
+            case 1: case 2: case 3:
+                document.write(`n은 1 입니다 <hr>`);
+                console.log(`n은 1 입니다`);
+        }
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
