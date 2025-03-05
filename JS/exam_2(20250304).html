@@ -56,6 +56,59 @@
                 break;
             }
         }
+
+        //month 변수에 1~12중 하나 대입
+        //해당 month에 몇일 있는지 출력
+        // 예시 출력 결과: 3월은 31일까지 있습니다
+
+        let month = 2;
+        let one = 31;
+        let zero = 30;
+        let feb = 28;
+        let count = month % 2
+
+        if(month == "2"){
+            document.write(`${month}월은 ${feb}일 까지 있습니다 <hr>`);
+        }else if(month == 8){
+            document.write(`${month}월은 ${one}일 까지 있습니다 <hr>`);
+        }else if(month < 8){
+            switch(count){
+                case 0:
+                    document.write(`${month}월은 ${zero}일 까지 있습니다 <hr>`);
+                    break;
+                case 1:
+                    document.write(`${month}월은 ${one}일 까지 있습니다 <hr>`);
+                    break;
+            }
+        }else if(month > 8 && month <= 12){
+            switch(count){
+                case 1:
+                    document.write(`${month}월은 ${zero}일 까지 있습니다 <hr>`);
+                    break;
+                case 0:
+                    document.write(`${month}월은 ${one}일 까지 있습니다 <hr>`);
+                    break;
+            }
+        }else{
+                document.write(`1~12중 입력해 주세요. <hr>`);
+                  
+        }
+
+        switch(month){
+                case 1: case 3: case 5: case 7: case 8: case 10: case 12:
+                    document.write(`${month}월은 ${one}일 까지 있습니다 <hr>`);
+                    break;
+                case 4: case 6: case 9: case 11:
+                    document.write(`${month}월은 ${zero}일 까지 있습니다 <hr>`);
+                    break;
+                case 2:
+                    document.write(`${month}월은 ${feb}일 까지 있습니다 <hr>`);
+                    break;
+                default:
+                    document.write(`1~12중 입력해 주세요. <hr>`);
+                    break;
+            }
+
     </script>
 </head>
 <body>

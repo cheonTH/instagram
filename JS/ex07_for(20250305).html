@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        //제어문(반복문)
+        //특정 명령을 내가 원하는 횟수만큼 반복해주는 문법
+        //for, while
+
+        // for(초기식; 조건식; 증감식){
+        //      반복하고자하는 명령어;
+        // }
+
+        //시작값과 종료값 사이에서 참이되는 숫자의 개수가 반복횟수라고 보면됨
+        for(let i = 0; i < 3; i++){
+            document.write(`${i} <br>`);
+        }
+        document.write(`<hr>`);
+
+        for(let i = 1; i <=6; i++){
+            document.write(`<h${i}> 자바스크립트 </h${i}>`);
+        }
+        document.write(`<hr>`);
+
+        document.write(`<ul>`);
+        for(let i = 1; i <= 3; i++){
+            document.write(`<li>안녕</li>`);
+        }
+        document.write(`</ul>`);
+        
+        document.write(`<hr>`);
+
+        //구구단
+        let a = 8;
+        for(let i = 1; i <= 9; i++){  
+            let result = a * i
+            document.write(`${a} X ${i} = ${result} <br>`);
+        }
+        document.write(`<hr>`);
+
+        // 10~1까지 출력
+        for(let i = 10; i >= 1; i--){
+            document.write(`${i} <br>`);
+        }
+        document.write(`<hr>`);
+
+        //1~10까지 합
+        let sum = 0;
+        for(let i = 1; i <= 10; i++){
+            sum +=  i
+        }
+        document.write(`${sum} <hr>`);
+
+        //짝수 출력
+        for(let i = 1; i <= 10; i++){
+            even = i % 2 == 0
+            if(even){
+                document.write(`${i} <br>`);
+            }
+        }
+        document.write(`<hr>`);
+
+        //1~10까지 3의 배수
+        for(let i = 1; i <= 10; i++){
+            three = i % 3 == 0
+            if(three){
+                document.write(`${i} <br>`);
+            }
+        }
+        document.write(`<hr>`);
+
+        //for문의 중첩
+        //반복문을 반복
+        for(let i = 1; i < 4; i++){
+            for(let j = 1; j< 4; j++){
+                document.write(`${i}, ${j} <br>`);
+            }
+        }
+        document.write(`<hr>`)
+
+        for(let i = 1; i < 6; i++){
+            for(let j = 1; j < 2; j++){
+                star = "*"
+                document.write(star, " ")
+                for(let t = 1; t < 4; t++){
+                    document.write(star, " ")
+                }
+            }
+            document.write(`<br>`)
+        }
+        document.write(`<hr>`)
+
+        //AAA
+        //AAA
+        //AAA
+        //AAA
+        for(let i = 1; i < 5; i++){
+            for(let j = 1; j < 4; j++){
+                document.write("A", " ")
+            }
+            document.write(`<br>`)
+        }
+        document.write(`<hr>`)
+
+        //1234
+        //1234
+        //1234
+        for(let i = 1; i < 4; i++){
+            for(let j = 1; j < 5; j++){
+                document.write(j, " ")
+            }
+            document.write(`<br>`)
+        }
+        document.write(`<hr>`)
+
+        //1234
+        //5678
+        //91011112
+
+        let num = 1;
+        for(let i = 1; i < 4; i++){
+            for(let j = 1; j < 5; j++){
+                document.write(num++, " ")
+            }
+            document.write(`<br>`)
+        }
+        document.write(`<hr>`)
+
+        //계단
+        for(let i = 1; i <=5; i++){
+            for(let j = 1; j <= i; j ++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        
+        document.write("<hr>")
+        
+        //반대 계단
+        for(let i = 1; i <=5; i++){
+            for(let j = 4; j >=i; j--){
+                document.write("&nbsp")
+            }
+            for(let j = 1; j <= i; j ++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+        
+        document.write("<hr>")
+        
+        //역계단
+        for(let i = 1; i <=5; i++){
+            for(let j = 5; j >= i; j --){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        
+        document.write("<hr>")
+
+        //반대 역계단
+        for(let i = 1; i <=5; i++){
+            for(let j = 1; j<=i; j++){
+                document.write("&nbsp")
+            }
+            for(let j = 5; j >= i; j --){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        
+        document.write("<hr>")
+
+        //삼각형
+        for(let i = 1; i <=5; i++){
+            for(let j = 5; j >=i; j--){
+                document.write("&nbsp")
+            }
+            for(let j = 1; j <= i; j ++){
+                document.write("*")
+            }
+            for(let j = 2; j <= i; j ++){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+        
+        document.write("<hr>")
+
+        //역삼각형
+        for(let i = 1; i <=5; i++){
+            for(let j = 1; j <=i; j++){
+                document.write("&nbsp")
+            }
+            for(let j = 5; j >= i; j --){
+                document.write("*")
+            }
+            for(let j = 4; j >= i; j --){
+                document.write("*")
+            }
+            document.write("<br>")
+        }
+
+
+        for(let i = 1; i <= 10; i++){
+            for(let j = 0; j <= 9; j++){
+                let num = i + j
+                if(num > 10){
+                    num -= 10;
+                }
+                document.write(num, " ");
+            }
+            document.write("<br>")
+        }
+
+        document.write("<hr>")
+
+
+        //구구단
+        for(let i = 2; i < 10; i++){
+            for(let j = 1; j< 10; j++){
+                document.write(`${i} X ${j} = ${i*j} <br>`);
+            }
+            document.write(`<hr>`)
+        }
+
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
