@@ -50,7 +50,7 @@
         }
         document.write(`${lotto} <hr>`);
 
-        outer:for(let i = 0; i < 6; i++){
+        outer:for(let i = 0; i < 6;){
             lotto[i] = Math.floor(Math.random()*45) + 1
             // 중복 여부 확인
             for(let j = 0; j < i; j++){
@@ -58,7 +58,8 @@
                     continue outer;
                 }
             }
-            
+            document.write(`${lotto[i]} <hr>`);
+            i++;
         }
         document.write(`${lotto} <hr>`);
 
