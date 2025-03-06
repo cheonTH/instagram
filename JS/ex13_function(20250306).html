@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 자바스크립트에서 제공하는 함수
+        //별도의 객체없이 바로 호출해서 사용할 수 있음
+
+        //eval()
+        //문자열로 표현된 자바스크립트 코드를 실행시키는 함수
+
+        let x = 10, y = 20;
+        let a = eval("x+y");
+        let b = eval("y*3");
+        document.write(`${a} <br>`);
+        document.write(`${b} <br>`);
+
+        document.write(` <hr>`);
+
+        // isFinite()
+        // 매개변수로 전달된 값이 유한한 수인지 검사하여 결과를 반환한다
+        //유한하면 true 무한하면 false
+
+        document.write(`${isFinite(123)} <br>`);
+        document.write(`${isFinite(123e100)} <br>`);
+        document.write(`${isFinite("123")} <br>`); //인수로 전달된 값이 숫자가 아니면, 숫자로 변환
+        document.write(`${isFinite("문자열")} <br>`); //false
+        document.write(`${isFinite(undefined)} <br>`); //false
+        document.write(`${isFinite(true)} <br>`); //true
+        document.write(`${isFinite(false)} <br>`); //true
+        document.write(`${isFinite(null)} <br>`); //true
+
+        document.write(`<hr>`);
+
+        // isNaN()
+        // 매개변수로 전달된 값이 NaN인지 검사하여 결과를 반환 
+        // 인수로 전달된 값이 숫자가 아니면, 숫자로 변환 
+        // 숫자가 아니면 true, 숫자이면 false
+        document.write(`${isNaN(123)} <br>`); //false
+        document.write(`${isNaN("123")} <br>`); //false
+        document.write(`${isNaN("문자열")} <br>`); //true
+
+        document.write(`<hr>`);
+
+        // parseFloat
+        // 문자열을 읽어서(파싱) 실수(숫자)로 반환
+        document.write(`${parseFloat("123.000")} <br>`);
+        document.write(`${parseFloat("123.456")} <br>`);
+
+        document.write(`<hr>`);
+
+        // parseInt()
+        // 문자열을 읽어서 정수로 반환
+        document.write(`${parseInt("123")} <br>`);
+        document.write(`${parseInt("123.456")} <br>`); //실수형을 주면 뒷부분을 없앰
+        
+        // 두번째 인자로 특정 진법을 전달하면, 해당 진법에 맞는 정수로 반환
+        document.write(`${parseInt("10", 10)} <br>`);
+        document.write(`${parseInt("10", 8)} <br>`);
+        document.write(`${parseInt("10", 16)} <br>`);
+        document.write(`${parseInt("10", 2)} <br>`);
+
+        document.write(`<hr>`);
+
+        // encodeURI()
+        // URI에서 주소를 표시하는 특수문자를 제외하고 모든 문자를 이스케이프 시퀀스 처리하여 부호화
+        // uri : 주소 + 데이터
+
+        let uri = "http://google.com/search.php?name=홍길동&city=서울";
+        let enc1 = encodeURI(uri);
+        let enc2 = encodeURIComponent(uri)
+        document.write(`${enc1} <br>`);
+        document.write(`${enc2} <br>`);
+
+        document.write(`<hr>`);
+
+        // 자바스크립트에서 제공하는 객체와 메서드
+        // Math
+        // Math.random() : 0과 1사이의 난수를 제공
+        let random = Math.random() * 45 + 1;
+        document.write(`${random} <br>`);
+        
+        // Math.floor() : 소수점 내림
+        document.write(`${Math.floor(random)} <br>`); 
+
+        // Math.ceil : 올림
+        document.write(`${Math.ceil(random)} <br>`);
+
+        // Math.round : 반올림
+        document.write(`${Math.round(random)} <br>`);
+
+        // Math.max() : 최대값
+        document.write(`${Math.max(1,2,3,4,5)} <br>`);
+
+        // Math.min() : 최소값
+        document.write(`${Math.min(1,2,3,4,5)} <br>`);
+
+        // Math.pow() : 거듭제곱 수행
+        document.write(`${Math.pow(2,3)} <br>`); //8
+
+        // Math.sqrt() : 제곱근을 계산
+        document.write(`${Math.sqrt(9)} <br>`);
+
+        // Math.abs() : 절대값
+        document.write(`${Math.abs(-5)} <br>`);
+
+        document.write(`<hr>`);
+        
+        // 문자열 관련 메서드
+        // indexOf() : 문자열 내에서 지정한 문자열의 첫번째 인덱스를 반환
+        let str = "Hello, world"
+        document.write(`${str.indexOf('world')} <br>`); //7
+
+        //lastIndexOf : 문자열 내에서 지정한 문자열의 마지막 인덱스 값을 반환
+        document.write(`${str.lastIndexOf('l')} <br>`); //10
+
+        // includes() : 문자열에 특정 부분 문자열이 포함되어 있으면 true 포함되어 있지 않으면 false
+        document.write(`${str.includes('hello')} <br>`); //false - 대소문자 인식 -> 정확하게 입력해야함
+        document.write(`${str.includes('Hello')} <br>`); //true
+
+        //startWith() : 문자열이 지정한 문자열로 시작하는지 확인
+        document.write(`${str.startsWith("Hell")} <br>`); //true
+
+        // slice() : 문자열의 일부를 잘라내어 새로운 문자열로 반환
+        document.write(`${str.slice(7, 12)} <br>`);
+
+        // replace() : 문자열의 일부 내용을 새로운 문자열로 치환한 결과를 반환
+        document.write(`${str.replace('world', 'JavaScript')} <br>`);
+
+        // concat() : 하나 이상의 문자열을 연결하여 새로운 문자열을 만듬
+        let str1 = "Hello";
+        let str2 = "World";
+        document.write(`${str1.concat(", ", str2)} <br>`);
+
+        // trim() : 문자열 양 끝에 공백을 제거한 새로운 문자열을 반환
+        let strWithSpace = "   Hello, World!   "
+        document.write(`${strWithSpace.trim()} <br>`);
+
+        let quiz = " n i c e t o m e e t y o u   ";
+        // document.write(`${quiz.replaceAll(" ", "")} <br>`);
+        
+        let cArr = quiz.trim().split(' ')
+        document.write(`${cArr} <br>`);
+        let answer = '';
+        for(let s of cArr){
+            answer += s;
+        }
+        document.write(`${answer} <br>`);
+
+        // split() : 문자열을 지정한 구분자로 나눠 배열로 반환
+        str = "apple,banana,charry";
+        document.write(`${str.split(',')} <br>`);
+
+        // charAt() : 지정한 인덱스의 문자를 반환
+        document.write(`${str.charAt(0)} <br>`);
+
+        // () :
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

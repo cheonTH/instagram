@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // 원의 넓이를 구하는 circleArea 함수 만들기
+        // 원의 둘레를 구하는 circleRound만들기
+        // circleArea는 함수 안에서 출력하고 마무리
+        // circleRound는 둘레를 반환하기
+        // 원의 넓이: 3.14 * 반지름 * 반지름
+        // 원의 둘레: 2 * 3.14 * 반지름
+
+        function circleArea(r){
+            let area = (3.14 * r * r).toFixed(2);
+            document.write(`원의 넓이: ${area}cm<sup>2</sup> <br>`);
+        }
+
+        function circleRound(r){
+            let round = (2 * 3.14 * r).toFixed(2);
+            return round;
+        }
+
+        circleArea(3);
+        document.write(`원의 둘레: ${circleRound(5)}cm <br>`);
+        
+        document.write(`<hr>`);
+
+        // 사칙연산을 하는 arithmetic 함수
+        // 두 숫자의 덧셈 뺄셈 곱셈 나눗셈을 구하시오
+
+        function arithmetic(x , y){
+            let add = x + y;
+            let sub = x - y;
+            let mul = x * y;
+            let div = x / y;
+
+            
+            document.write(`x와 y의 사칙연산: 더하기: ${add}, 빼기: ${sub}, 곱하기: ${mul}, 나누기: ${div} <br>`);
+        }
+        arithmetic(5, 4)
+
+        // fToC함수를 만들어서 화씨를 섭씨로 바꾸기
+        // cToF함수를 만들어서 섭씨를 화씨로 바꾸기
+        // 화씨 -> 섭씨 : (화씨 - 32) / 1.8 
+        // 섭씨 -> 화씨 : 1.8 * 섭씨 + 32
+
+        function fToC(f_do){
+            let change= ((f_do - 32) / 1.8).toFixed(2);
+            return change;
+        }
+
+        function cToF(c_do){
+            let change= (c_do * 1.8 + 32).toFixed(2);
+            return change;
+        }
+        document.write(`화씨 -> 섭씨 : ${fToC(78)}C <br>`);
+        document.write(`섭씨 -> 화씨 : ${cToF(26)}F <br>`);
+
+        document.write(`<hr>`); 
+
+        // 1~9사이의 정수를 전달하여 구구단을 
+        // 출력하는 showTable함수 작성 (화면에 출력)
+        function showTable(x) {
+            if(x <= 9 && x > 0){
+                for (let i = 1; i <= 9; i++) {
+                    var mult = x * i;
+                    document.write(`${x} X ${i} = ${mult} <br>`); 
+                }
+            }else{
+                document.write(`1~9 사이의 숫자만 입력해주세요<br>`); 
+            }
+        }
+
+        showTable(5);
+
+        document.write(`<hr>`); 
+
+
+        //매개변수로 임의의 숫자를 전달하여 1~n까지의 총합을 구하는 total함수를 만들고 반환
+        function total(n){
+            let sum = 0;
+            for(let i = 1; i <= n; i++){
+                sum += i
+            }
+            document.write(`1~ ${n}까지의 총합: ${sum} <br>`); 
+        }
+        total(10) 
+
+        document.write(`<hr>`); 
+
+        // n~m까지의 총합
+        // n이m보다 큰 경우 자리를 바꾸서 총합 구하기
+        // ex) 1~5 까지의 합과 5~1까지의 합이 같아야함
+
+        function total_2(n , m){
+            let sum = 0
+            if(n <= m){
+                for(let i = n; i <= m; i++){
+                    sum += i;
+                }
+                document.write(`${n} ~ ${m}까지의 총합: ${sum} <br>`); 
+            }else{
+                for(let j = m; j <= n; j++){
+                    sum += j;
+                }
+                document.write(`${m} ~ ${n}까지의 총합: ${sum} <br>`);
+            } 
+        }
+        total_2(5, 1);
+
+        document.write(`<hr>`);
+
+        // 숫자들이 담긴 배열을 매개변수로 받아, 배열 내 최대값을 반환하는 max_arr함수 
+
+        // function max_arr(x){
+        //     let gap = 0
+        //     for(let i = 0; i <= x.length; i++){
+        //         //
+        //         for(let j = 1; j <= i; j++)
+        //         if(x[i] > x[j]){
+        //             gap = (x[i]);
+        //         }else{
+        //             gap=(x[j])
+        //         }
+        //     }
+        //     document.write(`${gap}`);
+        // }
+
+        function max_arr(arr){
+            let max = arr[0]
+            for(let x of arr){
+                if(x > max){
+                    max = x;
+                }
+            }
+            document.write(`${max}`);
+        }
+        max_arr([1,2,3,4,5]);
+
+        document.write(`<hr>`);
+
+        // 문자열 뒤집기
+        // 문자열을 매개변수로 받아 해당 문자열을 뒤집어 반환하는 reverse함수를 작성
+
+        function reverse(x){
+            let a = ""
+            for(let i = x.length - 1; i >= 0; i--){
+                a += x[i];
+            }
+            document.write(`${a}`);
+        }
+
+
+        reverse("asd")
+
+
+
+        //
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
