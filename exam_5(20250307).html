@@ -13,16 +13,22 @@
 
             let s = num.value;
 
-            for(let i = 1; i <= 9; i++){
+            if(s > 9 && s < 1){
+                alert("0~9")
+            }else{
+                for(let i = 1; i <= 9; i++){
                 show.innerHTML +=`${s} x ${i} = ${s * i} <br>`;
+                }
             }
+
+            
         }
     </script>
 </head>
 <body>
     <input type="text" id = "num">
     <button id="cel" onclick="func1()">계산시작</button>
-    <input type = "button" value="숨기기">
+    <input type = "button" value="숨기기" id = "hide" onclick="func2()">
     <hr>
     <div id="show">
 
