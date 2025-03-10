@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        let num1 = 1;
+        let func1 = () =>{
+            let img = document.querySelector('#img');
+            let left_btn = document.querySelector('#left_btn');
+
+            if(num1 < 1){
+                num1 = 7;
+            }
+
+            img.src="../CSS/image/img" + num1 + ".jpg";
+            num1--;
+        }
+
+        let func2 = () =>{
+            let img = document.querySelector('#img');
+            let right_btn = document.querySelector('#right_btn');
+
+            if(num1 > 7){
+                num1 = 1;
+            }
+
+            img.src="../CSS/image/img" + num1 + ".jpg";
+            num1++;
+        }
+
+        let num = 1
+        let path = "../CSS/image/img";
+        let prev = () =>{
+            num--;
+            if(num < 1){
+                num = 7;
+            }
+            let prev_img = document.querySelector('#gallary');
+            prev_img.src = `../CSS/image/img${num}.jpg`;
+        }
+
+        let next = () =>{
+            num++;
+            if(num > 7){
+                num = 1;
+            }
+            let next_img = document.querySelector('#gallary');
+            next_img.src = `../CSS/image/img${num}.jpg`;
+        }
+
+        setInterval("next()", 1000);
+        // 각 호출 사이에 고정된 시간으로 함수를 반복적으로 호출할 수 있음
+        // 1000ms = 1초
+    </script>
+</head>
+<body>
+    <button><img src="../CSS/image/left_btn.png" alt="왼쪽 버튼" id="left_btn" onclick="func1()"></button>
+    <img src=""  id="img" width="300px">
+    <button><img src="../CSS/image/right_btn.png" alt="오른쪽 버튼" id="right_btn" onclick="func2()"></button>
+
+    <div id="gallaryWrap">
+        <a href="#" onclick="prev()">
+            <img src="../CSS/image/left_btn.png">
+        </a>
+        <img src="../CSS/image/img1.jpg" id="gallary" width="300px">
+        <a href="#" onclick="next()">
+            <img src="../CSS/image/right_btn.png">
+        </a>
+    </div>
+</body>
+</html>

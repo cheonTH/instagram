@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        table{text-align: center;}
+    </style>
+
+    <script>
+        let func1 = () => {
+            let num = document.querySelector('#num');  // doucment.querySelector('#num').value == let s.num.value
+            let cel = document.querySelector('#cel');
+            let show = document.querySelector('#show');
+
+            show.innerHTML = "";
+
+            let s = num.value;
+
+            if(s.trim() === ''){   //값이 아무것도 입력되지 않았을 때
+                alert("값을 입력해주세요");
+                return;
+            }
+
+            if (isNaN(s)) {  //값이 숫자가 아닌 경우
+                alert("숫자를 입력해주세요.");
+                return;  
+            }
+
+            if(s > 9 || s < 2){  //값이 2~9사이가 아닌경우
+               alert("2~9까지의 값을 입력해주세요");
+               return;
+                
+            }else{ 
+                 for(let i = 1; i <= 9; i++){
+                    show.innerHTML +=`${s} x ${i} = ${s * i} <br>`;
+                } 
+            }
+        }
+
+        let b_show = true;
+        let func2 = () =>{
+            // 두가지 선택지가 있으면 논리형으로 해결하는 것이 좋음
+            let hide = document.querySelector('#hide')
+            let show = document.querySelector('#show')
+
+            b_show = !b_show
+            //input버튼에 쓰여진 value값의 변경
+            hide.value = b_show ? '숨기기' : '보이기';
+
+            show.style.display = b_show ? 'block' : 'none'
+
+
+            
+        }
+
+        // 계산기
+
+        let func_cal = (x) =>{
+            let num_1 = document.querySelector('#num_1');
+            let num_2 = document.querySelector('#num_2');
+            let btn_talbe = document.querySelector('#btn_table')
+            let result = document.querySelector('#result');
+
+            a = num_1.value;
+            b = num_2.value;
+
+
+            if(a.trim() === ''){   //값이 아무것도 입력되지 않았을 때
+                alert("값을 입력해주세요");
+                return;
+            }
+
+            if (isNaN(a)) {  //값이 숫자가 아닌 경우
+                alert("숫자를 입력해주세요.");
+                return;  
+            }
+
+
+            if(b.trim() === ''){   //값이 아무것도 입력되지 않았을 때
+                alert("값을 입력해주세요");
+                return;
+            }
+
+            if (isNaN(b)) {  //값이 숫자가 아닌 경우
+                alert("숫자를 입력해주세요.");
+                return;  
+            }
+
+            if(x == '+'){
+                result.innerHTML = Number(a) + Number(b);
+            }
+            if(x == '-'){
+                result.innerHTML = Number(a) - Number(b);
+            }
+            if(x == '*'){
+                result.innerHTML = Number(a) * Number(b);
+            }
+            if(x == '/'){
+                result.innerHTML = (Number(a) / Number(b)).toFixed(2);
+            }
+
+            
+        }
+
+        
+
+
+        
+
+    </script>
+</head>
+<body>
+    <h2>구구단</h2>
+    <input type="text" id = "num" placeholder="숫자를 입력해주세요">
+    <button id="cel" onclick="func1()">계산시작</button>
+    <input type = "button" value="숨기기" id = "hide" onclick="func2()">
+    <hr>
+    <div id="show">
+
+    </div>
+    <!-- 계산기 만들기 -->
+     <h2>계산기</h2>
+
+    <table border="1">
+        <tr>
+            <td colspan="2">수1</td>
+            <td><input type="text" id="num_1"></td>
+
+        </tr>
+        <tr>
+            <td colspan="2">수2</td>
+            <td><input id="num_2"></td>
+        </tr>
+        <tr>
+            <td colspan="3" id="btn_table">
+                <button onclick="func_cal('+')">+</button>
+                <button onclick="func_cal('-')">-</button>
+                <button onclick="func_cal('*')">x</button>
+                <button onclick="func_cal('/')">/</button><br>
+
+            </td>
+        </tr>
+        <tr>
+            <td colspan="2">결과</td>
+            <td><div id="result">  </div></td>
+        </tr>
+     </table>
+
+
+</body>
+</html>
