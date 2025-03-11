@@ -101,7 +101,11 @@
             if(x == '/'){
                 result.innerHTML = (Number(a) / Number(b)).toFixed(2);
             }
-
+            if(x == 'c'){
+                result.innerHTML = ("");
+                a.value = " ";
+                b.value = " ";
+            }
             
         }
 
@@ -140,7 +144,7 @@
                 <button onclick="func_cal('-')">-</button>
                 <button onclick="func_cal('*')">x</button>
                 <button onclick="func_cal('/')">/</button><br>
-
+                <button onclick="func_cal('c')">C</button><br>
             </td>
         </tr>
         <tr>
