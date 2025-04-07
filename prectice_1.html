@@ -43,6 +43,7 @@
             gap: 10px;
         }
 
+<<<<<<< HEAD
         #reginum{
             display: flex;
             width: 10px; 
@@ -61,6 +62,8 @@
         border-radius: 5px;
         }
 
+=======
+>>>>>>> 46d3af42b387958750084f470f39c38789f5c91f
         .class-link{
             margin-top: 10px;
             text-align: center;
@@ -92,8 +95,11 @@
             let userID = document.querySelector('#userID');
             let userPW = document.querySelector('#userPW');
             let pwCheck = document.querySelector('#pwCheck');
+<<<<<<< HEAD
             let email = document.querySelector('#email');
             let select = document.querySelector('#select')
+=======
+>>>>>>> 46d3af42b387958750084f470f39c38789f5c91f
 
 
             if(name.value.trim() == ''){
@@ -106,6 +112,7 @@
                 alert("비밀번호 확인은 필수입니다.");
             }else if(userPW.value != pwCheck.value){
                 alert("비밀번호가 다릅니다.");
+<<<<<<< HEAD
             }else if(email.value.trim() == ''){
                 alert("이메일 입력을 필수입니다");
             }else if(select.value.trim() == '---'){
@@ -128,10 +135,18 @@
             
             
 
+=======
+            }else{
+                alert("로그인 성공!");
+                window.location.href = "index.html";
+            }
+        }
+>>>>>>> 46d3af42b387958750084f470f39c38789f5c91f
     </script>
 </head>
 <body>
     <div id="signup_con">
+<<<<<<< HEAD
         <h2>회원가입</h2>
         <form action="#" id="post">
             <label>이름</label>
@@ -147,6 +162,13 @@
                 </div>
             </div>
 
+=======
+        <h2>로그인</h2>
+        <form action="index.html" id="post">
+            <label>이름</label>
+            <input id="name" placeholder="이름 입력">
+
+>>>>>>> 46d3af42b387958750084f470f39c38789f5c91f
             <label>아이디</label>
             <div id="idCon">
                 <input id="userID" placeholder="아이디 입력">
@@ -178,7 +200,11 @@
             </div>
 
             <div class="login-link">
+<<<<<<< HEAD
                 이미 계정이 있으신가요? <a href="prectice2.html">로그인</a>
+=======
+                이미 계정이 있으신가요? <a href="#">로그인</a>
+>>>>>>> 46d3af42b387958750084f470f39c38789f5c91f
             </div>
         </form>
     </div>
