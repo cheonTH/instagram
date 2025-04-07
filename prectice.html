@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        body{
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #f2f2f2;
+        }
+
+        #signup_con{
+            background: #fff;
+            padding: 40px;
+            border-radius: 35px;
+            width: 350px;
+        }
+
+        #signup_con h2{
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        #signup_con form{
+            display: flex;
+            flex-direction: column;
+        }
+        #signipCon label{
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+
+        #idCon{
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+        }
+
+        #reginum{
+            display: flex;
+            width: 10px; 
+            gap: 10px;
+        }
+
+        #reginum div{
+            display: flex;
+            width: 10px; 
+            gap: 10px;
+        }
+
+        #regi_first, #regi_sec{
+        width: 155px; 
+        font-size: 14px; 
+        border-radius: 5px;
+        }
+
+        .class-link{
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        #signup_con input{
+            border-radius: 5px;
+            margin-bottom: 10px;
+
+        }
+    </style>
+
+    <script>
+        let func1 = () => {
+            let userID = document.querySelector('#userID');
+            let check_id = document.querySelector('#check_id');
+
+            if(userID.value.trim() == ''){
+                check_id.innerHTML = "아이디를 입력해주세요.";
+                
+            }else{
+                check_id.innerHTML = "사용가능한 아이디입니다.";
+            }
+        }
+
+        let func2 = () =>{
+            let join_btn = document.querySelector('#join_btn');
+            let name = document.querySelector('#name')
+            let userID = document.querySelector('#userID');
+            let userPW = document.querySelector('#userPW');
+            let pwCheck = document.querySelector('#pwCheck');
+            let email = document.querySelector('#email');
+            let select = document.querySelector('#select')
+
+
+            if(name.value.trim() == ''){
+                alert("이름 입력은 필수입니다.")
+            }else if(userID.value.trim() == ''){
+                alert("아이디 입력은 필수입니다.");
+            }else if(userPW.value.trim() == ''){
+                alert("비밀번호호 입력은 필수입니다.");
+            }else if(pwCheck.value.trim() == ''){
+                alert("비밀번호 확인은 필수입니다.");
+            }else if(userPW.value != pwCheck.value){
+                alert("비밀번호가 다릅니다.");
+            }else if(email.value.trim() == ''){
+                alert("이메일 입력을 필수입니다");
+            }else if(select.value.trim() == '---'){
+                alert("이메일 주소를 선택해주세요");
+            }else{
+                window.location.href = 'index.html';
+            }
+        }
+
+        let func3 = () =>{
+            let regi_first = document.querySelector('#regi_first');
+            let regi_mess = document.querySelector('#regi_mess');
+
+            if(!/^\d{6}$/.test(regi_first.value)){
+                regi_mess.innerHTML = "6자리만 입력 가능합니다.";
+            } else{
+                regi_mess.innerHTML = "조건에 맞습니다.";
+            }
+        }
+            
+            
+
+    </script>
+</head>
+<body>
+    <div id="signup_con">
+        <h2>회원가입</h2>
+        <form action="#" id="post">
+            <label>이름</label>
+            <input id="name" placeholder="이름 입력">
+
+            <label>주민등록번호</label>
+            <div id="reginum">
+                <input type="number" id="regi_first" oninput="func3()">
+                <span> - </span>
+                <input type="password" id="regi_sec">
+                <div id = "regi_mess">
+
+                </div>
+            </div>
+
+            <label>아이디</label>
+            <div id="idCon">
+                <input id="userID" placeholder="아이디 입력">
+                <button id="id_check" onclick="func1()">중복체크</button>
+            </div>
+            <div id="check_id">
+
+            </div>
+
+            <label>비밀번호</label>
+            <input type="password" id ="userPW" placeholder="비밀번호 입력">
+            <label>비밀번호 확인</label>
+            <input type="password" id ="pwCheck" placeholder="비밀번호 확인">
+
+            <label>이메일</label>
+            <div id="emailCon">
+                <input type="email" id="email" placeholder="이메일">
+                <span>@</span>
+                <select id="select">
+                    <option>---</option>
+                    <option>naver.com</option>
+                    <option>gmail.com</option>
+                    <option>nate.com</option>
+                </select>
+            </div>
+
+            <div id="joinBtn">
+                <button id="join_btn" onclick="func2()" >회원가입</button>
+            </div>
+
+            <div class="login-link">
+                이미 계정이 있으신가요? <a href="prectice2.html">로그인</a>
+            </div>
+        </form>
+    </div>
+</body>
+</html>
